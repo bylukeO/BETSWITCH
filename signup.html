@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BetSwitch - Sign Up</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="auth.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+   
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <a href="/" class="logo">
+            <img src="/images/betswitch logo black.jpeg" alt="BetSwitch Logo" />
+        </a>
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="#">Services</a>
+            <a href="#">Pricing</a>
+            <a href="#">Reviews</a>
+            <a href="#">Affiliates</a>
+        </nav>
+        <div class="auth-buttons">
+            <a href="signup.html" class="btn btn-outline active">Sign Up</a>
+            <a href="login.html" class="btn btn-filled">Login</a>
+        </div>
+    </header>
+
+    <!-- Signup Section -->
+    <section class="auth-section">
+        <div class="auth-container signup-container">
+            <h2>Create Your Account</h2>
+            <p class="auth-subtitle">Join BetSwitch today and start converting bet codes seamlessly.</p>
+            
+            <form id="signup-form">
+                <div class="form-group">
+                    <label for="fullname">Full Name</label>
+                    <input type="text" id="fullname" name="fullname" placeholder="Enter your full name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" placeholder="Enter your phone number">
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" placeholder="Create a password" required>
+                    <div class="password-strength">
+                        <div class="strength-meter">
+                            <div class="strength-progress"></div>
+                        </div>
+                        <span class="strength-text">Password strength</span>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="confirm-password">Confirm Password</label>
+                    <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm your password" required>
+                </div>
+                
+                <div class="form-group checkbox-group">
+                    <input type="checkbox" id="terms" name="terms" required>
+                    <label for="terms">I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a></label>
+                </div>
+                
+                <button type="submit" class="btn btn-auth">Create Account</button>
+                
+                <div class="social-signup">
+                    <p>Or sign up with</p>
+                    <div class="social-buttons">
+                        <button type="button" class="social-btn google">
+                            <i class="fa-brands fa-google" alt="Google" ></i>
+                            Google
+                        </button>
+                        <button type="button" class="social-btn facebook">
+                            <i class="fa-brands fa-facebook" alt="Facebook"></i>
+                            Facebook
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="auth-switch">
+                    <p>Already have an account? <a href="login.html">Log in</a></p>
+                </div>
+            </form>
+        </div>
+        
+        <!-- Signup Benefits -->
+        <div class="auth-benefits">
+            <h2>Benefits of Joining BetSwitch</h2>
+            
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">🔄</div>
+                    <h3>Seamless Bet Code Conversion</h3>
+                    <p>Convert bet codes between different bookmakers with just a click.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">📊</div>
+                    <h3>Track Conversion History</h3>
+                    <p>Access your full history of bet code conversions anytime.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">📱</div>
+                    <h3>Mobile Access</h3>
+                    <p>Convert bet codes on the go with our mobile-friendly platform.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">🔔</div>
+                    <h3>Real-time Notifications</h3>
+                    <p>Get updates on the latest odds and promotions from your favorite bookmakers.</p>
+                </div>
+            </div>
+            
+            <div class="testimonial">
+                <blockquote>
+                    "BetSwitch has completely changed how I place my bets. Now I can easily convert codes between different bookmakers and find the best odds."
+                </blockquote>
+                <cite>- James K., Professional Bettor</cite>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-grid">
+            <div class="footer-logo">
+                <img src="/api/placeholder/40/40" alt="BetSwitch Logo" />
+                <p>Unleash your inner champion with our Betslip converter.</p>
+                <div class="social-links">
+                    <a href="#" class="social-icon">📱</a>
+                    <a href="#" class="social-icon">📘</a>
+                    <a href="#" class="social-icon">📸</a>
+                    <a href="#" class="social-icon">🐦</a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Pricing</a></li>
+                    <li><a href="#">Reviews</a></li>
+                    <li><a href="#">Affiliates</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h3>Support</h3>
+                <ul>
+                    <li><a href="#">Help Center</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">Responsible Gaming</a></li>
+                </ul>
+            </div>
+            <div class="footer-newsletter">
+                <h3>Subscribe to our Newsletter</h3>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Your email here" />
+                    <button class="btn btn-filled" type="submit">Submit</button>
+                </form>
+                <p>Get the latest betting tips and promotions!</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 BetSwitch. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="signup.js"></script>
+</body>
+</html>
