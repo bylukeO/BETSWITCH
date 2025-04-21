@@ -67,6 +67,13 @@ function simulateConversion(sourceCode, sourceBookmaker, targetBookmaker) {
   // This is a very simplistic simulation
   // In reality, you would have bookmaker-specific algorithms
   let prefix = targetBookmaker.substring(0, 2).toUpperCase();
-  let suffix = sourceCode.replace(/[^0-9]/g, "").substring(0, 5);
+
+  // Extract numbers from the source code, or use random numbers if none exist
+  let numbersFromCode = sourceCode.replace(/[^0-9]/g, "");
+  let suffix =
+    numbersFromCode.length > 0
+      ? numbersFromCode.substring(0, 5)
+      : Math.floor(10000 + Math.random() * 90000).toString(); // 5-digit random number
+
   return `${prefix}-${suffix}`;
 }
