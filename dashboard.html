@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BetSwitch - Dashboard</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="auth.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <script src="js/auth.js"></script>
+    <script>
+      // Only run auth check once to avoid loops
+      let authCheckComplete = false;
+
+      document.addEventListener("DOMContentLoaded", async function () {
+        // If we've already verified auth with sessionStorage, don't check again
+        if (sessionStorage.getItem("isAuthenticated") === "true") {
+          console.log("Already authenticated via session storage");
+          return; // Already authenticated, no need to check again
+        }
+
+        if (authCheckComplete) return;
+        authCheckComplete = true;
+
+        console.log("Checking authentication...");
+
+        // Simple loading indicator
+        const loadingEl = document.createElement("div");
+        loadingEl.style.position = "fixed";
+        loadingEl.style.top = "0";
+        loadingEl.style.left = "0";
+        loadingEl.style.width = "100%";
+        loadingEl.style.height = "100%";
+        loadingEl.style.background = "rgba(255,255,255,0.8)";
+        loadingEl.style.display = "flex";
+        loadingEl.style.justifyContent = "center";
+        loadingEl.style.alignItems = "center";
+        loadingEl.style.zIndex = "9999";
+        loadingEl.innerHTML = "<div>Loading dashboard...</div>";
+        document.body.appendChild(loadingEl);
+
+        // Use protectPage from auth.js instead of direct fetch
+        try {
+          // Use the built-in authentication check function which properly sends cookies
+          const isAuthenticated = await protectPage();
+
+          if (isAuthenticated) {
+            console.log("User is authenticated, loading dashboard");
+            loadingEl.remove();
+
+            // Load user info if needed
+            try {
+              const userData = await getCurrentUser();
+              console.log("User data loaded:", userData);
+              // You could use this data to personalize the dashboard
+            } catch (userError) {
+              console.warn("Could not load user details:", userError);
+            }
+          } else {
+            // This shouldn't happen since protectPage redirects automatically
+            console.error("Authentication failed");
+            window.location.replace("/login.html");
+          }
+        } catch (error) {
+          console.error("Auth check failed:", error);
+          window.location.replace("/login.html");
+        }
+      });
+    </script>
+  </head>
+  <body>
+    <header class="header">
+      <a href="/" class="logo">
+        <img src="images/betswitch logo black.jpeg" alt="BetSwitch Logo" />
+      </a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="#">Services</a>
+        <a href="#">Pricing</a>
+        <a href="#">Reviews</a>
+        <a href="#">Affiliates</a>
+      </nav>
+      <div class="auth-buttons">
+        <button onclick="logout()" class="btn btn-outline">Logout</button>
+      </div>
+    </header>
+
+    <section class="dashboard-section">
+      <h1>Welcome to Your Dashboard</h1>
+      <p>Your account has been created successfully!</p>
+      <p>More features coming soon...</p>
+      <div class="dashboard-actions">
+        <a href="index.html" class="btn btn-filled">Go to Home Page</a>
+      </div>
+    </section>
+  </body>
+</html>
