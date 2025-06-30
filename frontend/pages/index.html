@@ -4,13 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>BetSwitch - Bet Code Converter</title>
-    <link rel="stylesheet" href="style.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-    />
+    <link rel="stylesheet" href="../styles/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
     <script src="js/auth.js"></script>
-    <script>
+    <!--- <script>
       // Check authentication on page load and redirect if not logged in
       document.addEventListener("DOMContentLoaded", async function () {
         const isAuthenticated = await checkAuthentication();
@@ -39,7 +36,7 @@
           console.error("Failed to load user data:", error);
         }
       });
-    </script>
+    </script> -->
     <script src="script.js"></script>
 
     <script src="js/conversion.js"></script>
@@ -47,8 +44,8 @@
   <body>
     <!-- Header Section -->
     <header class="header">
-      <a href="/" class="logo">
-        <img src="/images/betswitch logo black.jpeg" alt="BetSwitch Logo" />
+      <a href="../pages/index.html" class="logo">
+        <img src="../images/logo/betswitchwhitebackground.png" alt="BetSwitch Logo" />
       </a>
       <nav class="nav-links">
         <a href="#">Home</a>
@@ -58,18 +55,25 @@
         <a href="#">Affiliates</a>
       </nav>
       <div class="auth-buttons">
-        <a href="/signup.html" class="btn btn-outline">Sign Up</a>
-        <a href="/login.html" class="btn btn-filled">Login</a>
+        <a href="../pages/signup.html" class="btn btn-outline">Sign Up</a>
+        <a href="../pages/login.html" class="btn btn-filled">Login</a>
       </div>
     </header>
 
     <!-- Hero Section -->
     <section class="hero">
       <div class="converter-card">
-        <h2>Enter Booking</h2>
-        <input type="text" placeholder="Enter Your Booking Code Here" />
+        <div style="display: flex; align-items: center; justify-content: space-between;">
+          <h2 style="margin: 0;">Enter Booking</h2>
+          <img src="../images/logo/betswitch logo black.jpeg" alt="BetSwitch Logo" style="height: 40px; margin-left: 12px;" />
+        </div>
+        <input 
+          type="text" 
+          placeholder="Enter Your Booking Code Here"
+          style="background-color: #fff; color: #000;"
+        />
         <div class="converter-selectors">
-          <select>
+          <select style="background-color: #fff;">
             <option value="">Convert From</option>
             <option value="bet9ja">Bet9ja</option>
             <option value="betking">BetKing</option>
@@ -77,7 +81,7 @@
             <option value="paripesa">Paripesa</option>
             <option value="zebet">ZEbet</option>
           </select>
-          <select>
+          <select style="background-color: #fff;">
             <option value="">Convert To</option>
             <option value="bet9ja">Bet9ja</option>
             <option value="betking">BetKing</option>
@@ -113,19 +117,49 @@
       </div>
       <div class="bookmakers-grid">
         <div class="bookmaker-logo">
-          <img src="/api/placeholder/150/60" alt="Bet9ja" />
+          <img src="../images/logo/betking.JPG" alt="BetKing" />
         </div>
         <div class="bookmaker-logo">
-          <img src="/api/placeholder/150/60" alt="BetKing" />
+          <img src="../images/logo/bet9ja.JPG" alt="bet9ja" />
         </div>
         <div class="bookmaker-logo">
-          <img src="/api/placeholder/150/60" alt="1XBet" />
+          <img src="../images/logo/1xbet.JPG" alt="1XBET" />
         </div>
         <div class="bookmaker-logo">
-          <img src="/api/placeholder/150/60" alt="Paripesa" />
+          <img src="../images/logo/paripesa.JPG" alt="PARIPESA" />
         </div>
         <div class="bookmaker-logo">
-          <img src="/api/placeholder/150/60" alt="ZEbet" />
+          <img src="../images/logo/zebet.JPG" alt="ZEbet" />
+        </div>
+        <div class="bookmaker-logo">
+          <img src="../images/logo/betway.JPG" alt="betway" />
+        </div>
+        <div class="bookmaker-logo">
+          <img src="../images/logo/betandyou.JPG" alt="BETANDYOU" />
+        </div>
+        <div class="bookmaker-logo">
+          <img src="../images/logo/sportybet.JPG" alt="Sportybet" />
+        </div>
+        <div class="bookmaker-logo">
+          <img src="../images/logo/odibets.JPG" alt="odibet" />
+        </div>
+        <div class="bookmaker-logo">
+          <img src="../images/logo/betika.JPG" alt="Betika" />
+        </div>
+        <div class="bookmaker-logo">
+          <img src="../images/logo/bcgame.JPG" alt="BC.GAME" />
+        </div>
+        <div class="bookmaker-logo">
+          <img src="../images/logo/betafriq.JPG" alt="BETAFRIQ" />
+        </div>
+        <div class="bookmaker-logo">
+          <img src="../images/logo/melbet.JPG" alt="MELBET" />
+        </div>
+        <div class="bookmaker-logo">
+          <img src="../images/logo/betwinner.JPG" alt="BETWINNER" />
+        </div>
+        <div class="bookmaker-logo">
+          <img src="../images/logo/betpawa.JPG" alt="betpawa" />
         </div>
       </div>
     </section>
@@ -173,7 +207,41 @@
         <a href="#" class="btn btn-cta">CREATE FREE ACCOUNT NOW</a>
       </div>
     </section>
-
+    <!-- Why Choose BetSwitch Section -->
+    <section class="why-betswitch">
+      <div class="why-betswitch-container">
+        <!-- Text Content -->
+        <div class="why-betswitch-text">
+          <h2>What Is Betswitch Code Converter?</h2>
+          <p>
+            It Is A Service That Transfers Bet Selections From One Betting Site To Another. Otherwise, Bettors Give Up Interesting Bets Because The Booking Code Is Not In Their Preferred Bookie.
+          </p>
+          <p>
+            <strong>How To Convert Bet Code From One Bookie To Another Online?</strong>
+          </p>
+          <ol>
+            <li>Enter Booking Code: The Code You Want To Convert From.</li>
+            <li>Select The Origin Bookie: The Betting Site Where The Code To Be Converted Was Gotten From.</li>
+            <li>Select Destination Bookie: The Betting Site Where You Want To Convert To &amp; Click Submit.</li>
+          </ol>
+        </div>
+        <!-- Image Content -->
+        <div class="why-betswitch-image">
+          <div class="phone-mockup-stack">
+            <img 
+              src="../images/iMockup - Google Pixel 8 Pro(3).png" 
+              alt="BetSwitch App Screen" 
+              class="phone-mockup phone-mockup-back"
+            />
+            <img 
+              src="../images/iMockup - Google Pixel 8 Pro(2).png" 
+              alt="BetSwitch App Main" 
+              class="phone-mockup phone-mockup-front"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
     <!-- Testimonials Section -->
     <section class="testimonials">
       <div class="section-header">
@@ -212,27 +280,74 @@
       </div>
     </section>
 
-    <!-- Footer -->
+     <!-- Footer -->
     <footer class="footer">
       <div class="footer-grid">
         <div class="footer-intro">
-          <h2>BetSwitch</h2>
-          <p>
-            Your one-stop solution for converting bet codes between different
-            bookmakers.
-          </p>
+          <p>Unleash your inner champion with our Betslip converter.</p>
+          <img src="../images/logo/betswitch logo black.jpeg" alt="BetSwitch Logo" />
+          <div class="social-links">
+            <a href="#" class="social-icon"
+              ><i class="fa-brands fa-facebook"></i
+            ></a>
+            <a href="#" class="social-icon"
+              ><i class="fa-brands fa-instagram"></i
+            ></a>
+            <a href="#" class="social-icon"
+              ><i class="fa-brands fa-whatsapp"></i
+            ></a>
+            <a href="#" class="social-icon"
+              ><i class="fa-brands fa-x-twitter"></i
+            ></a>
+          </div>
         </div>
         <div class="footer-links">
           <h3>Quick Links</h3>
           <ul>
-            <li><a href="#">Home</a></li>
+            <li><a href="index.html">Home</a></li>
             <li><a href="#">Services</a></li>
             <li><a href="#">Pricing</a></li>
             <li><a href="#">Reviews</a></li>
             <li><a href="#">Affiliates</a></li>
           </ul>
         </div>
+        <div class="footer-contact">
+          <h3>Support</h3>
+          <ul>
+            <li><a href="#">Help Center</a></li>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+            <li><a href="#">Responsible Gaming</a></li>
+          </ul>
+        </div>
+        <div class="footer-newsletter">
+          <h3>Subscribe to our Newsletter</h3>
+          <form class="newsletter-form">
+            <input type="email" placeholder="Your email here" />
+            <button class="btn btn-filled" type="submit">Submit</button>
+          </form>
+          <p>Get the latest betting tips and promotions!</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 BetSwitch. All rights reserved.</p>
       </div>
     </footer>
+    <script src="script.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/public-pages.js"></script>
+    <script src="js/signup.js"></script>
+    <!-- Remove or comment out the Vercel Speed Insights scripts -->
+    <!-- 
+    <script>
+      window.si =
+        window.si ||
+        function () {
+          (window.siq = window.siq || []).push(arguments);
+        };
+    </script>
+    <script defer src="/_vercel/speed-insights/script.js"></script>
+    -->
   </body>
 </html>

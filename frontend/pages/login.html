@@ -3,9 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>BetSwitch - Sign Up</title>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="auth.css" />
+    <title>BetSwitch - Login</title>
+    <link rel="stylesheet" href="../styles/style.css" />
+    <link rel="stylesheet" href="../styles/auth.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
@@ -14,42 +14,31 @@
   <body>
     <!-- Header Section -->
     <header class="header">
-      <a href="/" class="logo">
-        <img src="/images/betswitch logo black.jpeg" alt="BetSwitch Logo" />
+      <a href="../pages/index.html" class="logo">
+        <img src="../images/betswitch logo black.jpeg" alt="BetSwitch Logo" />
       </a>
       <nav class="nav-links">
-        <a href="index.html">Home</a>
+        <a href="../index.html">Home</a>
         <a href="#">Services</a>
         <a href="#">Pricing</a>
         <a href="#">Reviews</a>
         <a href="#">Affiliates</a>
       </nav>
       <div class="auth-buttons">
-        <a href="signup.html" class="btn btn-outline active">Sign Up</a>
-        <a href="login.html" class="btn btn-filled">Login</a>
+        <a href="../pages/signup.html" class="btn btn-outline">Sign Up</a>
+        <a href="../pages/login.html" class="btn btn-filled active">Login</a>
       </div>
     </header>
 
-    <!-- Signup Section -->
+    <!-- Login Section -->
     <section class="auth-section">
-      <div class="auth-container signup-container">
-        <h2>Create Your Account</h2>
+      <div class="auth-container login-container">
+        <h2>Welcome Back</h2>
         <p class="auth-subtitle">
-          Join BetSwitch today and start converting bet codes seamlessly.
+          Login to access your BetSwitch account and services.
         </p>
 
-        <form id="signup-form">
-          <div class="form-group">
-            <label for="fullname">Full Name</label>
-            <input
-              type="text"
-              id="fullname"
-              name="fullname"
-              placeholder="Enter your full name"
-              required
-            />
-          </div>
-
+        <form id="login-form">
           <div class="form-group">
             <label for="email">Email Address</label>
             <input
@@ -60,54 +49,26 @@
               required
             />
           </div>
-
-          <div class="form-group">
-            <label for="phone">Phone Number</label>
-            <input
-              type="tel"
-              id="phone"
-              name="phone"
-              placeholder="Enter your phone number"
-            />
-          </div>
-
           <div class="form-group">
             <label for="password">Password</label>
             <input
               type="password"
               id="password"
               name="password"
-              placeholder="Create a password"
+              placeholder="Enter your password"
               required
             />
-            <div class="password-strength">
-              <div class="strength-meter">
-                <div class="strength-progress"></div>
-              </div>
-              <span class="strength-text">Password strength</span>
-            </div>
-          </div>
-
-          <div class="form-group">
-            <label for="confirm-password">Confirm Password</label>
-            <input
-              type="password"
-              id="confirm-password"
-              name="confirm-password"
-              placeholder="Confirm your password"
-              required
-            />
-          </div>
-
-          <div class="form-group checkbox-group">
-            <input type="checkbox" id="terms" name="terms" required />
-            <label for="terms"
-              >I agree to the <a href="#">Terms of Service</a> and
-              <a href="#">Privacy Policy</a></label
+            <a href="forgot-password.html" class="forgot-password"
+              >Forgot password?</a
             >
           </div>
 
-          <button type="submit" class="btn btn-auth">Create Account</button>
+          <div class="form-group checkbox-group">
+            <input type="checkbox" id="remember" name="remember" />
+            <label for="remember">Remember me</label>
+          </div>
+
+          <button type="submit" class="btn btn-auth">Login</button>
 
           <div class="social-signup">
             <p>Or sign up with</p>
@@ -124,12 +85,12 @@
           </div>
 
           <div class="auth-switch">
-            <p>Already have an account? <a href="login.html">Log in</a></p>
+            <p>Don't have an account? <a href="signup.html">Sign up</a></p>
           </div>
         </form>
       </div>
 
-      <!-- Signup Benefits -->
+      <!-- Login Benefits -->
       <div class="auth-benefits">
         <h2>Benefits of Joining BetSwitch</h2>
 
@@ -182,7 +143,7 @@
       <div class="footer-grid">
         <div class="footer-intro">
           <p>Unleash your inner champion with our Betslip converter.</p>
-          <img src="images/betswitch logo black.jpeg" alt="BetSwitch Logo" />
+          <img src="../images/betswitch logo black.jpeg" alt="BetSwitch Logo" />
           <div class="social-links">
             <a href="#" class="social-icon"
               ><i class="fa-brands fa-facebook"></i
@@ -201,7 +162,7 @@
         <div class="footer-links">
           <h3>Quick Links</h3>
           <ul>
-            <li><a href="index.html">Home</a></li>
+            <li><a href="../index.html">Home</a></li>
             <li><a href="#">Services</a></li>
             <li><a href="#">Pricing</a></li>
             <li><a href="#">Reviews</a></li>
@@ -231,12 +192,11 @@
         <p>&copy; 2025 BetSwitch. All rights reserved.</p>
       </div>
     </footer>
-    <script src="script.js"></script>
-    <script src="js/auth.js"></script>
-    <script src="js/public-pages.js"></script>
-    <script src="js/signup.js"></script>
+    <script src="../script.js"></script>
+    <script src="../js/auth.js"></script>
+    <script src="../js/login.js"></script>
     <!-- Remove or comment out the Vercel Speed Insights scripts -->
-    <!-- 
+    <!--
     <script>
       window.si =
         window.si ||
