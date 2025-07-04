@@ -80,20 +80,16 @@ function loginUser(email, password) {
       return response.json();
     })
     .then((data) => {
-      // Store token in localStorage
+      // Store auth token and user data
       localStorage.setItem("authToken", data.token);
-      // Store user data
       localStorage.setItem("userData", JSON.stringify(data.user));
 
-      showNotification("Login successful! Redirecting...", "success");
-
-      // Check for a redirect URL from session storage
+      // Redirect to dashboard or stored URL
       const redirectUrl =
         sessionStorage.getItem("redirectUrl") || "dashboard.html";
       sessionStorage.removeItem("redirectUrl");
-      setTimeout(() => {
-        window.location.href = redirectUrl;
-      }, 2000);
+
+      window.location.href = redirectUrl;
     })
     .catch((error) => {
       showNotification("Error: " + error.message, "error");

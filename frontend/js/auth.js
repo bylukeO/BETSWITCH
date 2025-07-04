@@ -55,7 +55,13 @@ async function logout(redirect = true) {
     });
 
     if (redirect) {
-      window.location.href = "/login.html";
+      // Use relative paths to ensure we redirect properly regardless of current location
+      // Check if we're in the pages directory
+      if (window.location.pathname.includes("/pages/")) {
+        window.location.href = "login.html";
+      } else {
+        window.location.href = "./pages/login.html";
+      }
     }
     return true;
   } catch (error) {
@@ -102,36 +108,19 @@ async function getCurrentUser() {
  * @returns {Promise<boolean>} - Whether authentication check succeeded
  */
 async function protectPage(saveRedirect = true) {
-  // To avoid redirect loops, check if we're currently in the authentication process
-  if (sessionStorage.getItem("authInProgress") === "true") {
-    return false;
-  }
+  const isAuthenticated = await checkAuthentication();
 
-  try {
-    sessionStorage.setItem("authInProgress", "true");
-
-    const isAuthenticated = await checkAuthentication();
-
-    if (!isAuthenticated) {
-      console.log("Not authenticated, redirecting to login");
-
-      // Store current URL for redirect after login
-      if (saveRedirect && !window.location.pathname.includes("login.html")) {
-        sessionStorage.setItem("redirectUrl", window.location.pathname);
-      }
-
-      window.location.replace("/login.html");
-      return false;
+  if (!isAuthenticated) {
+    if (saveRedirect) {
+      // Store current URL for redirection after login
+      sessionStorage.setItem("redirectUrl", window.location.pathname);
     }
-
-    console.log("Authentication confirmed for protected page");
-    sessionStorage.removeItem("authInProgress");
-    return true;
-  } catch (error) {
-    console.error("Protection check failed:", error);
-    sessionStorage.removeItem("authInProgress");
+    // Update the redirect path to go to pages/login.html
+    window.location.replace("./login.html");
     return false;
   }
+
+  return true;
 }
 
 /**

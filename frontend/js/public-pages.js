@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", async function () {
   if (isAuthenticated) {
     // User is already authenticated, redirect to dashboard or stored redirect URL
     const redirectUrl =
-      sessionStorage.getItem("redirectUrl") || "dashboard.html";
+      sessionStorage.getItem("redirectUrl") || "pages/dashboard.html";
     console.log("User already authenticated, redirecting to:", redirectUrl);
 
     // Don't redirect if we're already on the target page
