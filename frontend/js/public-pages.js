@@ -10,12 +10,20 @@ document.addEventListener("DOMContentLoaded", async function () {
   if (isAuthenticated) {
     // User is already authenticated, redirect to dashboard or stored redirect URL
     const redirectUrl =
-      sessionStorage.getItem("redirectUrl") || "pages/dashboard.html";
+      sessionStorage.getItem("redirectUrl") || "dashboard.html";
     console.log("User already authenticated, redirecting to:", redirectUrl);
 
     // Don't redirect if we're already on the target page
     if (!window.location.href.includes(redirectUrl)) {
-      window.location.replace(redirectUrl);
+      // Check if we're at the root and need to prepend "pages/"
+      if (
+        window.location.pathname === "/" ||
+        window.location.pathname.endsWith("index.html")
+      ) {
+        window.location.replace("pages/" + redirectUrl);
+      } else {
+        window.location.replace(redirectUrl);
+      }
     }
   } else {
     console.log("User not authenticated, staying on public page");
