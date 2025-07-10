@@ -11,32 +11,30 @@
     />
     <script src="../js/auth.js"></script>
     <script>
-      // Check authentication on page load and redirect if not logged in
+      // Check authentication on page load and update UI accordingly
       document.addEventListener("DOMContentLoaded", async function () {
-        const isAuthenticated = await checkAuthentication();
-
-        if (!isAuthenticated) {
-          console.log("User not authenticated, redirecting to login page");
-          window.location.replace("login.html");
-          return;
-        }
-
-        // If authenticated, update UI
-        console.log("User authenticated, loading home page");
         try {
-          const userData = await getCurrentUser();
-          console.log("User data loaded:", userData);
+          const isAuthenticated = await checkAuthentication();
 
-          // Update auth buttons to show logout instead of login/signup
-          const authButtons = document.querySelector(".auth-buttons");
-          if (authButtons) {
-            authButtons.innerHTML = `
-              <button onclick="logout()" class="btn btn-outline">Logout</button>
-              <a href="dashboard.html" class="btn btn-filled">Dashboard</a>
-            `;
+          if (isAuthenticated) {
+            console.log("User authenticated, loading home page");
+            const userData = await getCurrentUser();
+            console.log("User data loaded:", userData);
+
+            // Update auth buttons to show logout instead of login/signup
+            const authButtons = document.querySelector(".auth-buttons");
+            if (authButtons) {
+              authButtons.innerHTML = `
+                <button onclick="logout()" class="btn btn-outline">Logout</button>
+                <a href="dashboard.html" class="btn btn-filled">Dashboard</a>
+              `;
+            }
+          } else {
+            // User is not authenticated, leave default auth buttons
+            console.log("User not authenticated, showing default auth buttons");
           }
         } catch (error) {
-          console.error("Failed to load user data:", error);
+          console.error("Failed to check authentication or load user data:", error);
         }
       });
     </script>
@@ -214,4 +212,57 @@
     <!-- Footer -->
     <footer class="footer">
       <div class="footer-grid">
-        <div class="footer-int
+        <div class="footer-intro">
+          <p>Unleash your inner champion with our Betslip converter.</p>
+          <img
+            src="../images/logo/betswitch logo black.jpeg"
+            alt="BetSwitch Logo"
+          />
+          <div class="social-links">
+            <a href="#" class="social-icon"
+              ><i class="fa-brands fa-facebook"></i
+            ></a>
+            <a href="#" class="social-icon"
+              ><i class="fa-brands fa-instagram"></i
+            ></a>
+            <a href="#" class="social-icon"
+              ><i class="fa-brands fa-whatsapp"></i
+            ></a>
+            <a href="#" class="social-icon"
+              ><i class="fa-brands fa-x-twitter"></i
+            ></a>
+          </div>
+        </div>
+        <div class="footer-links">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Pricing</a></li>
+            <li><a href="#">Reviews</a></li>
+            <li><a href="#">Affiliates</a></li>
+          </ul>
+        </div>
+        <div class="footer-contact">
+          <h3>Support</h3>
+          <ul>
+            <li><a href="#">Help Center</a></li>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+            <li><a href="#">Responsible Gaming</a></li>
+          </ul>
+        </div>
+        <div class="footer-newsletter">
+          <h3>Subscribe to our Newsletter</h3>
+          <form class="newsletter-form">
+            <input type="email" placeholder="Your email here" />
+            <button class="btn btn-filled" type="submit">Submit</button>
+          </form>
+          <p>Get the latest betting tips and promotions!</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 BetSwitch. All rights reserved.</p>
+      </div>
+    </footer>
