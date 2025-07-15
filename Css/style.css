@@ -326,52 +326,18 @@ body {
 }
 
 /* Responsive adjustments for bookmakers section */
-@media (max-width: 992px) {
-  .bookmakers-grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
-  }
-  .bookmaker-logo img {
-    max-width: 80px;
-    max-height: 48px;
-  }
-}
-
-@media (max-width: 768px) {
-  .bookmakers-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
-  }
-  .bookmaker-logo {
-    padding: 1rem;
-  }
-  .bookmaker-logo img {
-    max-width: 60px;
-    max-height: 36px;
-  }
-}
-
-@media (max-width: 480px) {
-  .bookmakers {
-    padding: 2rem 2%;
-  }
-  .bookmakers-grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 0.5rem;
-  }
-  .bookmaker-logo {
-    padding: 0.5rem;
-  }
-  .bookmaker-logo img {
-    max-width: 48px;
-    max-height: 28px;
-  }
-}
 
 /* Tipsters Section */
 .tipsters {
   padding: 4rem 5%;
   background: var(--gray-light);
+}
+
+.featured-tag-row {
+  display: flex;
+  justify-content: center;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
 }
 
 .featured-tag {
@@ -380,6 +346,9 @@ body {
   padding: 0.25rem 0.75rem;
   border-radius: 20px;
   color: var(--gray);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+  font-weight: 500;
+  letter-spacing: 0.5px;
 }
 
 .tipsters-grid {
@@ -639,27 +608,45 @@ body {
 @media (max-width: 992px) {
   .bookmakers-grid {
     grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
   }
-
-  .footer-grid {
-    grid-template-columns: repeat(2, 1fr);
+  .bookmaker-logo img {
+    max-width: 80px;
+    max-height: 48px;
   }
 }
 
 @media (max-width: 768px) {
-  .hero {
-    flex-direction: column;
-    gap: 2rem;
-    padding: 2rem 5%;
-  }
-
-  .hero-content {
-    text-align: center;
-  }
-
   .bookmakers-grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
   }
+  .bookmaker-logo {
+    padding: 1rem;
+  }
+  .bookmaker-logo img {
+    max-width: 60px;
+    max-height: 36px;
+  }
+}
+
+@media (max-width: 480px) {
+  .bookmakers {
+    padding: 2rem 2%;
+  }
+  .bookmakers-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+  }
+  .bookmaker-logo {
+    padding: 0.5rem;
+  }
+  .bookmaker-logo img {
+    max-width: 48px;
+    max-height: 28px;
+  }
+}
+
 
   .tipsters-grid,
   .testimonial-grid {
@@ -669,7 +656,6 @@ body {
   .btn {
     padding: 0.5rem 1rem;
   }
-}
 
 @media (max-width: 576px) {
   .nav-links {
@@ -683,6 +669,52 @@ body {
 
   .footer-grid {
     grid-template-columns: 1fr;
+  }
+
+  .footer {
+    text-align: center;
+  }
+
+  .footer-intro {
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-intro img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .footer-links,
+  .footer-contact,
+  .footer-newsletter {
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .footer-links ul {
+    padding-left: 0;
+    display: inline-block;
+    text-align: left;
+  }
+
+  .footer-contact ul {
+    padding-left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  .footer-newsletter form {
+    justify-content: center;
+  }
+
+  .footer-bottom {
+    text-align: center;
   }
 
   .hero-content h1 {
